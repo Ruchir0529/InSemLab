@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>To-Do List</title>
+<style>
+body{font-family:Arial;padding:20px}
+input{padding:5px;width:200px}
+button{padding:5px 10px}
+li{border-bottom:1px solid #ccc;padding:5px 0}
+</style>
+</head>
+<body>
+<h3>To-Do List</h3>
+<input id="task" placeholder="Enter task">
+<button onclick="addTask()">Add</button>
+<ul id="list"></ul>
+
+<script>
+let tasks=[];
+function addTask(){
+ let t=task.value.trim();
+ if(t){tasks.push(t);task.value='';render();}
+}
+function render(){
+ list.innerHTML=tasks.map(x=>`<li>${x}</li>`).join('');
+}
+</script>
+</body>
+</html>
